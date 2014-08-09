@@ -1,5 +1,6 @@
 Battlehack::Application.routes.draw do
   
+  devise_for :users
 resources :users
 resources :items
 root to: 'raffles#index'

@@ -13,7 +13,7 @@
 #   rake "some:great:rake:task"
 # end
 #
- every 1.days do
+ every 2.minutes do
    runner "Reffle.check_dates"
  end
 
