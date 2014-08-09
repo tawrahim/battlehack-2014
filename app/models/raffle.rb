@@ -3,7 +3,17 @@ class Raffle < ActiveRecord::Base
 
 	has_many :bids
 
+	def self.check_dates()
+		current_date =  Date.today
+		Raffle.all.each do |raf|
+			if current_date == raf.end_raffle.to_date and raf.done == false
+				raf.do_raffle
+			end
+		end
+	end
+
 	def do_raffle()
+		self.done = true
 		total_tokens = 0
 		self.bids.each do |bid|
 			total_tokens += bid.number_of_tokens
