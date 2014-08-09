@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  seller_id: 1
+  picture_url: MyString
+  description: MyText
+  charity_name: MyString
+  pickup_location: MyText
+  winner_id: 1
+  end_raffle: 2014-08-09 10:51:43
+
+two:
+  seller_id: 1
+  picture_url: MyString
+  description: MyText
+  charity_name: MyString
+  pickup_location: MyText
+  winner_id: 1
+  end_raffle: 2014-08-09 10:51:43
