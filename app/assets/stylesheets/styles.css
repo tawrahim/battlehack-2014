@@ -1,0 +1,103 @@
+/*
+
+My Custom CSS
+=============
+
+*/
+
+#navbar-search-item {
+	margin-top: 7px;
+}
+
+.raffle-thumbnail-text {
+	margin-top: -11px;
+}
+
+/* --------------------------------------
+   Layout
+   -------------------------------------- */
+
+
+footer {
+	background: #333;
+	color: #eee;
+	font-size: 11px;
+	padding: 20px;
+}
+
+
+/* --------------------------------------
+   Typography
+   -------------------------------------- */
+
+
+
+/* --------------------------------------
+   Navbar
+   -------------------------------------- */
+   
+.navbar-22 {
+	height: 22px;
+}   
+   
+
+
+
+/* --------------------------------------
+   Global Styles
+   -------------------------------------- */
+.top-row{
+	margin-top :100px;
+}
+
+.data-row {
+	margin-bottom: 15px;
+}
+
+.hidden {
+	visibility: hidden;
+	display: none;
+}
+
+.no-bullet-list {
+	list-style-type: none;
+}
+
+.img-portrait {
+	width: 100px; 
+	height: 100px;
+}
+
+.centered-content {				
+	text-align: center;
+}
+
+.justiftied-content {
+	text-align: justify;
+}
+
+.left-content {
+	text-align: left;	
+}
+
+.right-content {
+	text-align: right;
+}
+
+.bold-content {
+	font-weight: bold;
+}
+
+.img-60 {
+	width: 60px;
+	height: 60px;
+}
+
+.img-35 {
+	width: 35px;
+	height: 35px;
+}
+
+.full-width-content {
+	width: 100%;
+}

@@ -32,8 +32,11 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+gem 'twitter-bootstrap-rails'
+
 gem 'debugger'
 gem 'sendgrid-ruby'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

@@ -1,2 +1,46 @@
-<h1>Raffles#index</h1>
-<p>Find me in app/views/raffles/index.html.erb</p>
+<div class="container">
+  <div class="navbar navbar-fixed-top">
+    <div class="container">
+      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+      <button class="navbar-toggle" /assets-target=".navbar-responsive-collapse" /assets-toggle="collapse" type="button">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <a class="navbar-brand" href="/"><img class="navbar-22" src="/assets/raffle_logo.jpg" alt="Prestie" ></a>
+
+      <div class="nav-collapse collapse navbar-responsive-collapse">
+        <ul class="nav navbar-nav">
+          <li class="active">
+          <a href="#">Raffle It!</a>
+          </li>													
+        </ul>
+
+        <ul class="nav navbar-nav pull-right">
+          <li>
+          <input id="navbar-search-item" type="text" placeholder="Look for..." class="form-control" >
+          </li>
+        </ul><!-- end nav pull-right -->
+      </div><!-- end nav-collapse -->
+
+
+    </div> <!-- end container -->
+  </div><!-- end navbar -->		
+
+  <div class="row top-row">
+  </div> <!-- end body -->
+
+  <div class="row /assets-row">			
+    <% @rafles.each do |x| %>
+    <%=  x.name %>
+    <div class="col-3">
+      <div class="panel no-border centered-content raffle-item-interspace">			
+        <img src="/assets/winch12Vpower.jpg" style="width: 150px; height: 100px;"/>
+      </div><!-- end panel -->
+      <h6 class="centered-content raffle-thumbnail-text"></h6>
+    <% end %>
+    </div>
+  </div>				
+
+
+</div><!-- end container -->		
