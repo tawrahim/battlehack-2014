@@ -5,4 +5,11 @@ class RafflesController < ApplicationController
 
   def edit
   end
+
+  def create
+  end
+
+  def new
+    @raffle = Raffle.new
+  end
 end
