@@ -36,11 +36,12 @@ gem 'twitter-bootstrap-rails'
 
 gem 'debugger'
 gem 'sendgrid-ruby'
-<<<<<<< HEAD
-
-=======
 gem 'whenever', :require => false
->>>>>>> a591fe5c4e239d6bad211a009bf14fcf4e2fd990
+
+group :production do
+  gem 'pg', '0.15.1'
+  gem 'rails_12factor', '0.0.2'
+end
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
