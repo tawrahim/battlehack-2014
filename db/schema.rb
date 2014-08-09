@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140809175534) do
+ActiveRecord::Schema.define(version: 20140809205401) do
 
   create_table "bids", force: true do |t|
     t.integer  "user_id"
@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(version: 20140809175534) do
     t.datetime "end_raffle"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "done",            default: false
   end
 
   create_table "users", force: true do |t|
