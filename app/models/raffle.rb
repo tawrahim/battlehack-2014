@@ -1,4 +1,6 @@
 class Raffle < ActiveRecord::Base
+	require 'sendgrid-ruby'
+
 	has_many :bids
 
 	def do_raffle()
@@ -12,9 +14,41 @@ class Raffle < ActiveRecord::Base
 		self.bids.each do |bid|
 			if chosen_number < current_token_count + bid.number_of_tokens
 				self.update(winner_id:bid.user_id)
+				self.send_emails
 				return
 			end
 			current_token_count += bid.number_of_tokens
 		end
+	end
+
+	def send_emails
+		client = SendGrid::Client.new(api_user: 'Raffle', api_key: 'myraffle')
+		#email_addr = User.get_email(winner_id)
+		email_addr = User.find(winner_id).email
+		
+		# uncomment
+		#client.send(SendGrid::Mail.new(to: email_addr, from: 'raffle@good.com', 
+		#	subject: 'Contgats!', text: 'Great news, you won!', 
+		#	html: '<b>Great news, you won!</b>'))
+		
+		losers = self.bids.pluck(:user_id)
+		losers.delete(self.winner_id)
+		if losers.size > 0
+			losers.each do |loser|
+				email_addr = User.find(winner_id).email
+
+				# uncomment
+				#client.send(SendGrid::Mail.new(to: email_addr, from: 'raffle@good.com', 
+				#	subject: 'Next time', text: 'This time you didn't win', 
+				#	html: '<b>This time you didn't win</b>'))
+			end
+		end
+
+		email_addr = User.find(self.seller_id).email
+		# uncomment
+				#client.send(SendGrid::Mail.new(to: email_addr, from: 'raffle@good.com', 
+				#	subject: 'Raffle is over', text: 'Please contact XX', 
+				#	html: '<b>Please contact XX</b>'))
+
 	end
 end

@@ -58,6 +58,7 @@ GEM
     mime-types (1.25.1)
     minitest (4.7.5)
     multi_json (1.10.1)
+    netrc (0.7.7)
     polyglot (0.3.5)
     rack (1.5.2)
     rack-test (0.6.2)
@@ -78,6 +79,9 @@ GEM
     rake (10.3.2)
     rdoc (4.1.1)
       json (~> 1.4)
+    rest-client (1.7.2)
+      mime-types (>= 1.16, < 3.0)
+      netrc (~> 0.7)
     sass (3.2.19)
     sass-rails (4.0.3)
       railties (>= 4.0.0, < 5.0)
@@ -87,6 +91,10 @@ GEM
     sdoc (0.4.0)
       json (~> 1.8)
       rdoc (~> 4.0, < 5.0)
+    sendgrid-ruby (0.0.2)
+      rest-client
+      smtpapi
+    smtpapi (0.0.3)
     sprockets (2.11.0)
       hike (~> 1.2)
       multi_json (~> 1.0)
@@ -121,6 +129,7 @@ DEPENDENCIES
   rails (= 4.0.4)
   sass-rails (~> 4.0.2)
   sdoc
+  sendgrid-ruby
   sqlite3
   turbolinks
   uglifier (>= 1.3.0)
