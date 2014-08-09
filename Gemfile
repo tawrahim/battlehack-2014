@@ -3,8 +3,6 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.4'
 
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.2'
@@ -37,7 +35,20 @@ gem 'twitter-bootstrap-rails'
 gem 'debugger'
 gem 'sendgrid-ruby'
 gem 'whenever', :require => false
+<<<<<<< HEAD
 gem 'devise'
+=======
+
+group :production do
+  gem 'pg', '0.15.1'
+  gem 'rails_12factor', '0.0.2'
+end
+
+group :development do
+  gem 'sqlite3'
+end
+
+>>>>>>> 323f17ebd3491081f4b1c7f0a720062e21474dcc
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

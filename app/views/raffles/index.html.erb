@@ -12,7 +12,7 @@
       <div class="nav-collapse collapse navbar-responsive-collapse">
         <ul class="nav navbar-nav">
           <li class="active">
-          <a href="#">Raffle It!</a>
+          <%= link_to "Raffle it!", raffles_path  %>
           </li>													
         </ul>
 
@@ -27,19 +27,17 @@
     </div> <!-- end container -->
   </div><!-- end navbar -->		
 
-  <div class="row top-row">
-  </div> <!-- end body -->
-
-  <div class="row /assets-row">			
+  <div class="row top-row">			
     <% @rafles.each do |x| %>
-    <%=  x.name %>
     <div class="col-3">
       <div class="panel no-border centered-content raffle-item-interspace">			
         <img src="/assets/winch12Vpower.jpg" style="width: 150px; height: 100px;"/>
       </div><!-- end panel -->
-      <h6 class="centered-content raffle-thumbnail-text"></h6>
+      <h6 class="centered-content raffle-thumbnail-text">
+      <%=  x.name %>
+      </h6>
+      </div>
     <% end %>
-    </div>
   </div>				
 
 

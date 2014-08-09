@@ -1,0 +1,22 @@
+<%= form_for(@raffle) do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.label :email %>
+  <%= f.text_field :email %>
+
+  <%= f.label :description %>
+  <%= f.text_field :description %>
+
+  <%= f.label :pickup_location %>
+  <%= f.text_field :pickup_location %>
+
+
+  <%= f.label :charity_name %>
+  <%= f.select :charity_name, [['horrible', 1], ['poor', 2], ['mediocre', 3], ['good', 4], ['great', 5]]%>
+
+  <%= f.label :picture_url %>
+
+  <%= f.submit "Create my account", class: "btn btn-large btn-primary" %>
+  
+<% end %>
