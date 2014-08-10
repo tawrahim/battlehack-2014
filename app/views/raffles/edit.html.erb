@@ -32,15 +32,17 @@
 
       <div class="row" style="margin-top: 20px;">
         <div class="col-6">	
-          <%#<%= text_field_tag "number of tokens", :tokens, placeholder: "# of tickets (each 1$)", :class => "form-control" %>
-          <script async="async" src="https://www.paypalobjects.com/js/external/paypal-button.min.js?merchant=ty@m.com" 
-            data-amount-editable="1"
-                data-button="buynow" 
-                    data-name="Donate to Charity"
-                    >
-                    </script>
+
+          <%= text_field_tag "number of tokens", :tokens, placeholder: "# of tickets (each 1$)", :class => "form-control cooler" %>
         </div>						
 
+          <div class="col-6">
+            <script async="async" src="https://www.paypalobjects.com/js/external/paypal-button.min.js?merchant=ty@m.com" 
+              data-amount="5"
+              data-button="donate" 
+              data-name="Donate to Charity"
+              ></script>
+          </div>
         <div class="col-6">
           <%#<%= submit_tag "Paypal", :class => "btn full-width-content" %>
         </div>
