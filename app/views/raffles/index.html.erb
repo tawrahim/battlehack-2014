@@ -9,17 +9,12 @@
         <% @rafles.each do |x| %>
           <div>
             <div class="panel no-border centered-content raffle-item-interspace">      
-              <img src="/assets/winch12Vpower.jpg" class="raffle-item-thumbnail-img"/>
+              <%=
+                link_to image_tag("/assets/winch12Vpower.jpg", :class => "raffle-item-thumbnail-img"), edit_raffle_path(:id => x.id) %>
             </div><!-- end panel -->
             <h6 class="centered-content raffle-thumbnail-text">
               <%=  x.name %>
             </h6>
-
-            <%= link_to "Buy now", edit_raffle_path(:id => x.id), :class => "button" %>
-
-            <span class='st_facebook_large' displayText='Facebook'></span>
-            <span class='st_twitter_large' displayText='Tweet'></span>
-            <span class='st_pinterest_large' displayText='Pinterest'></span>
           </div>
       <% end %>
       </div>

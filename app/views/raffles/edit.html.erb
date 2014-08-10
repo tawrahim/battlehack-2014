@@ -1,8 +1,60 @@
 <div class="row top-row special_row">			
 
-<%= form_tag(edit_raffle_path, method: :get) do %>
-  <%= label_tag(:tokens, "Number of tokens") %>
-  <%= text_field_tag(:tokens) %>
-  <%= submit_tag("Paypal") %>
-<% end %>
+  <%= form_tag(edit_raffle_path, method: :get) do %>
+  <div class="row" style="margin-top: 75px;">
+    <div class="col-4 col-offset-4 well">
+
+      <div class="row">
+        <div class="col-12">
+          <img class="full-width-content" src="/assets/kidsBicycle.jpg" />
+
+          <div id="raffle_item_description">
+            <h5><span class="bold-content">Kids Bicycle</span></h5>
+            <h6>I have a red kids bicycle for size S. It's been with my family for the last 8 
+              years and has been in use by both of my kids. In general good condition, minor visible scratches</h6>	
+            <hr>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-5 col-offset-1">
+          <h5 class="pull-left" title="Pickup location"><span class="glyphicon glyphicon-globe"></span>  Cambridge, MA </h5>
+        </div>
+
+        <div class="col-5">
+          <h5 class="pull-right" title="Raffle end date"><span class="glyphicon glyphicon-time"></span>  8/10/2014 </h5>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row" >
+    <div class="col-4 col-offset-4" style="background-color: orange; height: 75px;">
+
+      <div class="row" style="margin-top: 20px;">
+        <div class="col-6">	
+          <%= text_field_tag "number of tokens", :tokens, placeholder: "# of tickets (each 1$)", :class => "form-control" %>
+        </div>						
+
+        <div class="col-6">
+          <script async="async" src="https://www.paypalobjects.com/js/external/paypal-button.min.js?merchant=ty@m.com" 
+                data-button="buynow" 
+                    data-name="Donate to Charity"
+                    ></script>
+          <%#<%= submit_tag "Paypal", :class => "btn full-width-content" %>
+        </div>
+      </div>
+    </div>							
+  </div>
+
+  <div class="row">
+      <span class='st_facebook_large' displayText='Facebook'></span>
+      <span class='st_twitter_large' displayText='Tweet'></span>
+      <span class='st_pinterest_large' displayText='Pinterest'></span>
+  </div>
+
+
+</div><!-- end container -->
 </div>
+  <% end %>
