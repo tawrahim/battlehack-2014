@@ -3,7 +3,18 @@ class RafflesController < ApplicationController
     @rafles = Raffle.all
   end
 
+  def update
+     @raffle = Raffle.find(params[:id]) 
+     if @raffle.update_attributes(raffle_param)
+       flash[:success] = "Profile has been succesfully updated!"
+       redirect_to root_path
+     else
+       render 'edit'
+     end
+  end
+
   def edit
+       @raffle = Raffle.find(params[:id]) 
     if params[:tokens]
        @raffle = Raffle.find(params[:id]) 
        @raffle.bids.create!(user_id: current_user.id, number_of_tokens: params[:tokens].to_i)

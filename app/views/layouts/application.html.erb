@@ -17,10 +17,11 @@
         <span class="icon-bar"></span>
       </button>
 
-      <a class="navbar-brand" href="/"><img class="navbar-22" src="/assets/raffle_logo.jpg" alt="Prestie" ></a>
-
       <div class="nav-collapse collapse navbar-responsive-collapse">
         <ul class="nav navbar-nav">
+          <li>
+      <%= link_to image_tag("/assets/raffle_logo.jpg", :class => "navbar-22"), raffles_path %>
+          </li>
           <li class="active">
           <% if user_signed_in? %>
             <%= link_to "Raffle it!", new_raffle_path  %>
@@ -50,7 +51,10 @@
 
     </div> <!-- end container -->
   </div><!-- end navbar -->		
+
+<div class="row nice_form">			
 <%= yield %>
-<%= debug(params) if Rails.env.development? %>
+</div>
+
 </body>
 </html>

@@ -2,29 +2,19 @@
 <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
 <script type="text/javascript">stLight.options({publisher: "2a2c9b31-0a92-4c57-a60a-66688b8f574f", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
 
-
-  <div class="row top-row">			
-    <div class="col-12">
+    <div class="col-10 col-offset-1">
       <div id="selectable-raffle-item-thumbnails">
         <% @rafles.each do |x| %>
           <div>
             <div class="panel no-border centered-content raffle-item-interspace">      
-              <img src="/assets/winch12Vpower.jpg" class="raffle-item-thumbnail-img"/>
+              <%=
+                link_to image_tag("/assets/winch12Vpower.jpg", :class => "raffle-item-thumbnail-img"), edit_raffle_path(:id => x.id) %>
             </div><!-- end panel -->
             <h6 class="centered-content raffle-thumbnail-text">
               <%=  x.name %>
             </h6>
-
-            <%= link_to "Buy now", edit_raffle_path(:id => x.id), :class => "button" %>
-
-            <span class='st_facebook_large' displayText='Facebook'></span>
-            <span class='st_twitter_large' displayText='Tweet'></span>
-            <span class='st_pinterest_large' displayText='Pinterest'></span>
           </div>
       <% end %>
       </div>
     </div>
   </div>				
-
-
-</div><!-- end container -->		
