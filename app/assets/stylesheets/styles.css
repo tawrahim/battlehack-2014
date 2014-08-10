@@ -112,3 +112,26 @@ footer {
   width: 150px;
   height: 100px;
 }
+
+.nice_form {
+  width: 1000px;
+  /*height: 165px;*/
+  margin-left: 10%;
+  margin-right: 40%;
+  background: #f6f9fa url(/assets/bg.png) left -250px repeat;
+  background-size: 50%;
+  border-top: solid 1px rgba(23,45,53,0.08);
+  border-bottom: solid 1px rgba(23,45,53,0.08);
+  padding-top: 130px;
+  padding-bottom: 140px;
+  text-align: center;
+}
+.cool_label {
+  width: 106px;
+}
+.cool_field {
+  margin-bottom: 10px;
+}
+.special_row {
+  margin-top: 10px;
+}

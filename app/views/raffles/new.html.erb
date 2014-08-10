@@ -1,34 +1,35 @@
-<div class="row top-row">			
-<%= form_for(@raffle) do |f| %>
-  <div class="row">
-    <div>
-      <%= f.label :name %>
-      <%= f.text_field :name %>
-    </div>
+<div class="row top-row nice_form">			
+  <div class="col-4 col-offset-4">
 
-    <div>
-      <%= f.label :description %>
-      <%= f.text_field :description %>
-    </div>
+    <%= form_for(@raffle) do |f| %>
+      <div class="row">
+        <%= f.label :name, :class => "cool_label"%>
+        <%= f.text_field :name, :class => "cool_field" %>
+        </div>
 
-    <div>
-      <%= f.label :pickup_location %>
-      <%= f.text_field :pickup_location %>
-    </div>
+        <div>
+          <%= f.label :description, :class => "cool_label" %>
+          <%= f.text_field :description, :class => "cool_field"%>
+        </div>
 
+        <div>
+          <%= f.label :pickup_location, :class => "cool_label" %>
+          <%= f.text_field :pickup_location, :class => "cool_field" %>
+        </div>
 
-    <div>
-      <%= f.label :charity_name %>
-      <%= f.select :charity_name, [['horrible', 1], ['poor', 2], ['mediocre', 3], ['good', 4], ['great', 5]]%>
-    </div>
+        <div>
+          <%= f.label :charity_name, :class => "cool_label" %>
+          <%= f.select :charity_name, [['horrible', 1], ['poor', 2], ['mediocre', 3], ['good', 4], ['great', 5]], :class => "cool_field"%>
+        </div>
 
-    <div>
-      <%= f.label :picture_url %>
-    </div>
+        <div>
+          <%= f.label :picture_url, :class => "cool_field"%>
+        </div>
 
-    <div>
-      <%= f.submit "Add an item", class: "btn btn-large btn-primary" %>
-    </div>
+        <div>
+          <%= f.submit "Add an item", class: "btn btn-large btn-primary" %>
+        </div>
+      </div>
+    <% end %>
   </div>
-<% end %>
 </div>
