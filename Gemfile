@@ -34,6 +34,8 @@ gem 'twitter-bootstrap-rails'
 
 gem 'debugger'
 gem 'sendgrid-ruby'
+gem 'twilio-ruby', '~> 3.11'
+
 gem 'whenever', :require => false
 
 gem 'devise'
@@ -51,7 +53,6 @@ end
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-
 # Use unicorn as the app server
 # gem 'unicorn'
 
