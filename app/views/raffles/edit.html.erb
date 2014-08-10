@@ -1,2 +1,8 @@
 <div class="row top-row special_row">			
+
+<%= form_tag(edit_raffle_path, method: :get) do %>
+  <%= label_tag(:tokens, "Number of tokens") %>
+  <%= text_field_tag(:tokens) %>
+  <%= submit_tag("Paypal") %>
+<% end %>
 </div>

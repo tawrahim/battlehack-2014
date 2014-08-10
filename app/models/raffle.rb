@@ -1,5 +1,6 @@
 class Raffle < ActiveRecord::Base
 	require 'sendgrid-ruby'
+	require 'twilio-ruby'
 
 	has_many :bids
 
@@ -60,5 +61,16 @@ class Raffle < ActiveRecord::Base
 				#	subject: 'Raffle is over', text: 'Please contact XX', 
 				#	html: '<b>Please contact XX</b>'))
 
+		
+		# Get your Account Sid and Auth Token from twilio.com/user/account
+		account_sid = 'ACbf7b8d79851244b675d681427a164bdd'
+		auth_token = '941f2261609e5da4c391fd843e3fee48'
+		@client = Twilio::REST::Client.new account_sid, auth_token
+		message = @client.account.messages.create(:body => "Testing Twillo",
+		:to => "+16177846015",
+		:from => "+18572632907")
+		puts message.to
+
 	end
+
 end

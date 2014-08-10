@@ -4,6 +4,10 @@ class RafflesController < ApplicationController
   end
 
   def edit
+    if params[:tokens]
+       @raffle = Raffle.find(params[:id]) 
+       @raffle.bids.create!(user_id: current_user.id, number_of_tokens: params[:tokens].to_i)
+    end
   end
 
   def create
