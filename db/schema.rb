@@ -31,8 +31,8 @@ ActiveRecord::Schema.define(version: 20140809223156) do
     t.datetime "end_raffle"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.boolean  "done",            default: false
     t.string   "name"
+    t.boolean  "done",            default: false
   end
 
   create_table "users", force: true do |t|

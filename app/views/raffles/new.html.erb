@@ -1,22 +1,34 @@
+<div class="row top-row">			
 <%= form_for(@raffle) do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
+  <div class="row">
+    <div>
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+    </div>
 
-  <%= f.label :email %>
-  <%= f.text_field :email %>
+    <div>
+      <%= f.label :description %>
+      <%= f.text_field :description %>
+    </div>
 
-  <%= f.label :description %>
-  <%= f.text_field :description %>
+    <div>
+      <%= f.label :pickup_location %>
+      <%= f.text_field :pickup_location %>
+    </div>
 
-  <%= f.label :pickup_location %>
-  <%= f.text_field :pickup_location %>
 
+    <div>
+      <%= f.label :charity_name %>
+      <%= f.select :charity_name, [['horrible', 1], ['poor', 2], ['mediocre', 3], ['good', 4], ['great', 5]]%>
+    </div>
 
-  <%= f.label :charity_name %>
-  <%= f.select :charity_name, [['horrible', 1], ['poor', 2], ['mediocre', 3], ['good', 4], ['great', 5]]%>
+    <div>
+      <%= f.label :picture_url %>
+    </div>
 
-  <%= f.label :picture_url %>
-
-  <%= f.submit "Create my account", class: "btn btn-large btn-primary" %>
-  
+    <div>
+      <%= f.submit "Add an item", class: "btn btn-large btn-primary" %>
+    </div>
+  </div>
 <% end %>
+</div>

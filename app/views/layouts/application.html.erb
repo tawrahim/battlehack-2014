@@ -8,7 +8,39 @@
 </head>
 <body>
 
-<%= yield %>
+<div class="container">
+  <div class="navbar navbar-fixed-top">
+    <div class="container">
+      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+      <button class="navbar-toggle" /assets-target=".navbar-responsive-collapse" /assets-toggle="collapse" type="button">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
 
+      <a class="navbar-brand" href="/"><img class="navbar-22" src="/assets/raffle_logo.jpg" alt="Prestie" ></a>
+
+      <div class="nav-collapse collapse navbar-responsive-collapse">
+        <ul class="nav navbar-nav">
+          <li class="active">
+          <% if user_signed_in? %>
+            <%= link_to "Raffle it!", new_raffle_path  %>
+          <% else %>
+            <%= link_to "Raffle it!", new_user_session_path %>
+          <% end %>
+          </li>													
+        </ul>
+
+        <ul class="nav navbar-nav pull-right">
+          <li>
+          <input id="navbar-search-item" type="text" placeholder="Look for..." class="form-control" >
+          </li>
+        </ul><!-- end nav pull-right -->
+      </div><!-- end nav-collapse -->
+
+
+    </div> <!-- end container -->
+  </div><!-- end navbar -->		
+<%= yield %>
+<%= debug(params) if Rails.env.development? %>
 </body>
 </html>

@@ -101,3 +101,14 @@ footer {
 .full-width-content {
 	width: 100%;
 }
+
+#selectable-raffle-item-thumbnails div {
+  margin-left: 10px;
+  margin-right: 10px;
+  float: left;
+}
+
+.raffle-item-thumbnail-img {
+  width: 150px;
+  height: 100px;
+}
