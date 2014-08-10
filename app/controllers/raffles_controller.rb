@@ -35,6 +35,6 @@ class RafflesController < ApplicationController
   # This is to allow mass assignment
   def raffle_param
     params.require(:raffle).permit(:name, :pickup_location, :charity_name,
-                                :description)
+                                :description,:picture_url,:end_raffle)
   end
 end

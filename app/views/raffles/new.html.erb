@@ -1,34 +1,171 @@
-<div class="row top-row">			
-<%= form_for(@raffle) do |f| %>
-  <div class="row">
-    <div>
-      <%= f.label :name %>
-      <%= f.text_field :name %>
-    </div>
+<!DOCTYPE html>
 
-    <div>
-      <%= f.label :description %>
-      <%= f.text_field :description %>
-    </div>
+  <body>      
+    <div class="container">
 
-    <div>
-      <%= f.label :pickup_location %>
-      <%= f.text_field :pickup_location %>
-    </div>
+      <div class="navbar navbar-fixed-top">
+        <div class="container">
+          <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+          <button class="navbar-toggle" data-target=".navbar-responsive-collapse" data-toggle="collapse" type="button">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          
+          <a class="navbar-brand" href="/"><img class="navbar-22" src="images/raffle_full_logo.jpg" alt="raffle" ></a>
+
+        </div> <!-- end container -->
+      </div><!-- end navbar -->   
+      
+      <div class="row top-row">
+        <div class="col-6 col-offset-3  centered-content">
+          <h2>Raffle Your Stuff, Donate To Charity</h2>
+          <hr>
+        </div>
+      </div>
+      
+      <div class="row row-gap-10">
+        <%= form_for(@raffle) do |f| %>
+     
+        <div class="col-4 col-offset-4 well">
+        
+          <div class="row row-gap-10">
+            <div class="col-6" >
+               <% if f.object.picture_url %>
+                  <%= f.file_field :picture_url,:multiple => true, :class =>"btn" %>
+                <% else %>  
+                    <div class="col-6" >
+                      <button type="button" class="btn btn-info">Select Image</button>
+                  </div>
+                <% end %>
+            </div>
+            
+            <div class="col-6" >
+              <% if f.object.picture_url %>
+                <%= image_tag(f.object.picture_url, :class => "full-width-content",
+                  alt: "../assets/raffle_full_logo.jpg") %>
+              <% else %>
+              <%= image_tag('../assets/kidsBicycle.jpg', :class => "full-width-content") %> 
+              <% end %>
+            </div>
+          </div>
+          
+          <div class="row row-gap-10">
+            <div class="col-6">
+              <h5> <%= f.label "Item name" %> </h5>
+            </div>
+            <div class="col-6">
+                   <%= f.text_field :name %> 
+            </div>
+                        
+          </div>
+          
+          <div class="row row-gap-10">
+            <div class="col-6">
+              <h5> <%= f.label :description %></h5>
+            </div>   
+            <div class="col-6">
+                   <%= f.text_field :description %>
+            </div>
+            
+          </div>
+          
+          <div class="row row-gap-10">
+            <div class="col-6">
+              <h5><%= f.label :pickup_location %></h5>
+            </div>   
+            <div class="col-6">
+                  <%= f.text_field :pickup_location %>
+            </div>
+            
+          </div>
+
+          <div class="row row-gap-10">
+            <div class="col-6">
+               <h5><%= f.label "Select Date" %></h5>
+            </div>
+            
+            <div class="col-6">
+              <%= image_tag('calendar2.png',:style => "width: 50px") %>
+<!--               <button type="button" class="btn btn-info full-width-content">Select Date</button>
+ -->            </div>
+          </div>
+
+          <div class="row row-gap-10">
+            <div class="col-6">
+              <h5><%= f.label "Charity" %></h5>
+            </div>
+            <% if f.object.picture_url %>
+              <div class="col-6">
+               <%= f.select :charity_name, [['Charity 1', 1], ['Charity 2', 2], ['Charity 3', 3]]%>      
+            </div>
+            <% else %>
+
+            <div class="col-6">
+              <div class="dropdown ">
+                <button class="btn btn-info dropdown-toggle full-width-content" type="button" id="dropdownMenu1" data-toggle="dropdown">
+                Proceeds go to
+                <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Charity 1</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Charity 2</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Charity 3</a></li>
+                </ul>
+              </div>          
+            </div>
+            <% end %>
+
+          </div>
+          
+          
+        </div>
+      </div>
+    
+      
+      <div class="row" >
+        <div class="col-2 col-offset-4 paypal-col">
+          <%= f.submit "Add an item", class: "btn btn-info form-control", style: "margin-top: 20px;" %>
+        </div>
+        
+        <div class="col-2 paypal-col">
+          <button type="button" class="btn btn-info form-control" style="margin-top: 20px;" >Cancel</button>
+        </div>          
+      </div>
+      
+    <% end %>      
+      
+    </div><!-- end container -->    
+      
+    
+    <!-- All Javascript at the bottom of the page for faster page loading -->
+    
+    <!-- First try for the online version of jQuery-->
+    <script src="http://code.jquery.com/jquery.js"></script>
+    
+    <!-- If no online access, fallback to our hardcoded version of jQuery -->
+    <script>window.jQuery || document.write('<script src="includes/js/jquery-1.8.2.min.js"><\/script>')</script>
+    
+    <!-- Bootstrap JS -->
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    
+    <!-- Custom JS -->
+    <script src="includes/js/script.js"></script>
+  
+  </body>
 
 
-    <div>
-      <%= f.label :charity_name %>
-      <%= f.select :charity_name, [['horrible', 1], ['poor', 2], ['mediocre', 3], ['good', 4], ['great', 5]]%>
-    </div>
 
-    <div>
-      <%= f.label :picture_url %>
-    </div>
 
-    <div>
-      <%= f.submit "Add an item", class: "btn btn-large btn-primary" %>
-    </div>
-  </div>
-<% end %>
-</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
