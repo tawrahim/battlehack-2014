@@ -5,6 +5,10 @@ class UsersController < ApplicationController
   def edit
   end
 
+   def show
+   	redirect_to root_path
+  end
+
   def delete
   end
 end

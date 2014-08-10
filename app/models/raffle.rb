@@ -38,38 +38,40 @@ class Raffle < ActiveRecord::Base
 		email_addr = User.find(winner_id).email
 		
 		# uncomment
-		#client.send(SendGrid::Mail.new(to: email_addr, from: 'raffle@good.com', 
-		#	subject: 'Contgats!', text: 'Great news, you won!', 
-		#	html: '<b>Great news, you won!</b>'))
+		
+		client.send(SendGrid::Mail.new(to: email_addr, from: 'raffle@good.com', 
+			subject: 'Contgats!', text: 'Great news, you won!', 
+			html: '<b>Great news, you won!</b>'))
 		
 		losers = self.bids.pluck(:user_id)
+		
 		losers.delete(self.winner_id)
 		if losers.size > 0
+			
 			losers.each do |loser|
-				email_addr = User.find(winner_id).email
+				email_addr = User.find(loser).email
 
 				# uncomment
-				#client.send(SendGrid::Mail.new(to: email_addr, from: 'raffle@good.com', 
-				#	subject: 'Next time', text: 'This time you didn't win', 
-				#	html: '<b>This time you didn't win</b>'))
+				client.send(SendGrid::Mail.new(to: email_addr, from: 'raffle@good.com', 
+					subject: 'Next time', text: 'This time you didnt win'))
 			end
 		end
 
 		email_addr = User.find(self.seller_id).email
 		# uncomment
-				#client.send(SendGrid::Mail.new(to: email_addr, from: 'raffle@good.com', 
-				#	subject: 'Raffle is over', text: 'Please contact XX', 
-				#	html: '<b>Please contact XX</b>'))
+		
+		client.send(SendGrid::Mail.new(to: email_addr, from: 'raffle@good.com', 
+			subject: 'Raffle is over', text: 'Please contact '+ User.find(self.seller_id).email))
 
 		
-		# Get your Account Sid and Auth Token from twilio.com/user/account
-		account_sid = 'ACbf7b8d79851244b675d681427a164bdd'
-		auth_token = '941f2261609e5da4c391fd843e3fee48'
-		@client = Twilio::REST::Client.new account_sid, auth_token
-		message = @client.account.messages.create(:body => "Testing Twillo",
-		:to => "+16177846015",
-		:from => "+18572632907")
-		puts message.to
+		 #Get your Account Sid and Auth Token from twilio.com/user/account
+		 account_sid = 'ACaa3e215f77dcfcd646a99ecfa7d64121'
+		 auth_token = '2962ec88a1178318bede3ef5694ceaac'
+		 @client = Twilio::REST::Client.new account_sid, auth_token
+		 message = @client.account.messages.create(:body => "The raffle has ended, you have won!",
+		 :to => "+16177846015",
+		 :from => "+18572632907")
+		 puts message.to
 
 	end
 
