@@ -27,7 +27,6 @@ GEM
       tzinfo (~> 0.3.37)
     arel (4.0.2)
     bcrypt (3.1.7)
-    bootstrap-datetimepicker (2.1.30)
     builder (3.1.4)
     chronic (0.10.2)
     climate_control (0.0.3)
@@ -170,7 +169,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bootstrap-datetimepicker
   coffee-rails (~> 4.0.0)
   debugger
   devise
