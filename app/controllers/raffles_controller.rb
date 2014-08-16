@@ -1,6 +1,12 @@
 class RafflesController < ApplicationController
   def index
-    @rafles = Raffle.all
+    if params[:search]
+      @raffles = Raffle.find(:all, :conditions => ['name LIKE ? OR description LIKE ?',
+       "%#{params[:search]}%", "%#{params[:search]}%"])
+
+    else
+      @raffles = Raffle.all
+    end
   end
 
   def update
@@ -45,8 +51,7 @@ class RafflesController < ApplicationController
   private
   # This is to allow mass assignment
   def raffle_param
-    params.require(:raffle).permit(:name, :pickup_location, :charity_name,
+    params.require(:raffle).permit(:picture,:name, :pickup_location, :charity_name,
                                 :description,:end_raffle)
-    params.require(:raffle).permit(:picture)
   end
 end

@@ -3,13 +3,22 @@
 <script type="text/javascript">stLight.options({publisher: "2a2c9b31-0a92-4c57-a60a-66688b8f574f", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
 
     <div class="col-10 col-offset-1">
+      <form class="row-fluid navbar-search span2" action="/raffles" method="get">
+              <input type="text" name="search" class="search-query" placeholder="search">
+      </form>
+     
+         <br>
+    </div>
+
+    <div class="col-10 col-offset-1">
+
       <div id="selectable-raffle-item-thumbnails">
-        <% @rafles.each do |x| %>
+        <% @raffles.each do |x| %>
           <div>
-            <div class="panel no-border centered-content raffle-item-interspace">      
-              <%=
+<!--             <div class="panel no-border centered-content raffle-item-interspace">      
+ -->              <%=
                 link_to image_tag(x.picture.url, :class => "raffle-item-thumbnail-img"), edit_raffle_path(:id => x.id) %>
-            </div><!-- end panel -->
+            <!-- </div> --><!-- end panel -->
             <h6 class="centered-content raffle-thumbnail-text">
               <%=  x.name %>
             </h6>

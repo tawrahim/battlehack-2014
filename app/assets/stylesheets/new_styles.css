@@ -20,13 +20,20 @@ My Custom CSS
 #selectable-raffle-item-thumbnails  .ui-selected { background: #6699FF; color: white; }
 
 .raffle-thumbnail-text {
-	margin-top: -12px;
-	color: red;
+	margin-top: -22px;
+	margin-bottom: 30px;
+	/*color: red;*/
 }
 
 .raffle-item-thumbnail-img {
 	width: 150px; 
 	height: 100px;
+	box-shadow: 0px 2px 10px 2px rgba(119, 119, 119, 0.75);
+	-moz-box-shadow: 0px 2px 10px 2px rgba(119, 119, 119, 0.75);
+	-webkit-box-shadow: 0px 2px 10px 2px rgba(119, 119, 119, 0.75);
+	height: 203px;
+	width: 250px;
+	margin-bottom: 30px;
 }
 
 #raffle-item-full-dialog {}
@@ -64,7 +71,8 @@ footer {
 /* --------------------------------------
    Global Styles
    -------------------------------------- */
-.top-row{
+
+body{
 	margin-top :100px;
 }
 
