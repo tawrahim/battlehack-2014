@@ -6,6 +6,9 @@ class Raffle < ActiveRecord::Base
 	has_attached_file :picture, :styles => { :large => "600x600>", :thumb => "100x100>" }, :default_url => "/images/:style/missing.png"
   	validates_attachment_content_type :picture, :content_type => /\Aimage\/.*\Z/
 
+	geocoded_by :pickup_location
+    after_validation :geocode, :if => :pickup_location_changed?
+
 	def self.check_dates()
 		current_date =  Date.today
 		Raffle.all.each do |raf|

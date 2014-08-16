@@ -22,7 +22,9 @@ gem 'whenever', :require => false
 gem 'devise'
 gem 'paypal-sdk-rest'
 gem "paperclip", "~> 4.1"
-
+gem 'geocoder'
+gem 'gmaps4rails'
+gem 'underscore-rails'
 
 group :production do
   gem 'pg', '0.15.1'

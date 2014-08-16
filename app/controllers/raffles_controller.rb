@@ -3,9 +3,18 @@ class RafflesController < ApplicationController
     if params[:search]
       @raffles = Raffle.find(:all, :conditions => ['name LIKE ? OR description LIKE ?',
        "%#{params[:search]}%", "%#{params[:search]}%"])
-
     else
       @raffles = Raffle.all
+    end
+
+    @hash = Gmaps4rails.build_markers(@raffles) do |raffle, marker|
+      if raffle.latitude
+         marker.lat raffle.latitude 
+         marker.lng raffle.longitude 
+      else # fallback
+          marker.lat 0
+          marker.lng 0
+      end
     end
   end
 

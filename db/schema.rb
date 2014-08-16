@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140816133309) do
+ActiveRecord::Schema.define(version: 20140816210811) do
 
   create_table "bids", force: true do |t|
     t.integer  "user_id"
@@ -37,6 +37,8 @@ ActiveRecord::Schema.define(version: 20140816133309) do
     t.string   "picture_content_type"
     t.integer  "picture_file_size"
     t.datetime "picture_updated_at"
+    t.float    "latitude"
+    t.float    "longitude"
   end
 
   create_table "users", force: true do |t|

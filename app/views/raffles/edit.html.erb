@@ -4,12 +4,11 @@
 
       <div class="row">
         <div class="col-12">
-          <%= image_tag("kidsBicycle.jpg", :class=>"full-width-content") %>
+          <%= image_tag(@raffle.picture.url, :class=>"full-width-content") %>
 
           <div id="raffle_item_description">
-            <h5><span class="bold-content">Kids Bicycle</span></h5>
-            <h6>I have a red kids bicycle for size S. It's been with my family for the last 8 
-              years and has been in use by both of my kids. In general good condition, minor visible scratches</h6>	
+            <h5><span class="bold-content"><%= @raffle.name %></span></h5>
+            <h6><%= @raffle.description %></h6>	
             <hr>
           </div>
         </div>
@@ -17,11 +16,11 @@
 
       <div class="row">
         <div class="col-5 col-offset-1">
-          <h5 class="pull-left" title="Pickup location"><span class="glyphicon glyphicon-globe"></span>  Cambridge, MA </h5>
+          <h5 class="pull-left" title="Pickup location"><span class="glyphicon glyphicon-globe"></span>  <%= @raffle.pickup_location %> </h5>
         </div>
 
         <div class="col-5">
-          <h5 class="pull-right" title="Raffle end date"><span class="glyphicon glyphicon-time"></span>  8/10/2014 </h5>
+          <h5 class="pull-right" title="Raffle end date"><span class="glyphicon glyphicon-time"></span>  <%= @raffle.end_raffle %> </h5>
         </div>
       </div>
     </div>
