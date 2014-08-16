@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140809223156) do
+ActiveRecord::Schema.define(version: 20140816133309) do
 
   create_table "bids", force: true do |t|
     t.integer  "user_id"
@@ -31,8 +31,12 @@ ActiveRecord::Schema.define(version: 20140809223156) do
     t.datetime "end_raffle"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.boolean  "done",            default: false
+    t.boolean  "done",                 default: false
     t.string   "name"
+    t.string   "picture_file_name"
+    t.string   "picture_content_type"
+    t.integer  "picture_file_size"
+    t.datetime "picture_updated_at"
   end
 
   create_table "users", force: true do |t|

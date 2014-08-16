@@ -21,6 +21,8 @@ gem 'twilio-ruby', '~> 3.11'
 gem 'whenever', :require => false
 gem 'devise'
 gem 'paypal-sdk-rest'
+gem "paperclip", "~> 4.1"
+gem  'bootstrap-datetimepicker'
 
 group :production do
   gem 'pg', '0.15.1'

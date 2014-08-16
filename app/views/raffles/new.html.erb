@@ -1,20 +1,5 @@
-<!DOCTYPE html>
-
-  <body>      
-    <div class="container">
-
-      <div class="navbar navbar-fixed-top">
-        <div class="container">
-          <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
-          <button class="navbar-toggle" data-target=".navbar-responsive-collapse" data-toggle="collapse" type="button">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          
-          <a class="navbar-brand" href="/"><img class="navbar-22" src="images/raffle_full_logo.jpg" alt="raffle" ></a>
-
-        </div> <!-- end container -->
-      </div><!-- end navbar -->   
+  
+      
       
       <div class="row top-row">
         <div class="col-6 col-offset-3  centered-content">
@@ -24,25 +9,22 @@
       </div>
       
       <div class="row row-gap-10">
-        <%= form_for(@raffle) do |f| %>
+        <%= form_for @raffle, :html => { :multipart => true } do |f| %>
      
         <div class="col-4 col-offset-4 well">
         
           <div class="row row-gap-10">
             <div class="col-6" >
-               <% if f.object.picture_url %>
-                  <%= f.file_field :picture_url,:multiple => true, :class =>"btn" %>
-                <% else %>  
-                    <div class="col-6" >
+                  <%= f.file_field :picture %>
+                  <!--   <div class="col-6" >
                       <button type="button" class="btn btn-info">Select Image</button>
-                  </div>
-                <% end %>
+                  </div> -->
             </div>
             
             <div class="col-6" >
-              <% if f.object.picture_url %>
-                <%= image_tag(f.object.picture_url, :class => "full-width-content",
-                  alt: "../assets/raffle_full_logo.jpg") %>
+              <% if f.object.picture.url %>
+                <%= image_tag(f.object.picture.url, :class => "full-width-content",
+                  alt: "raffle_full_logo.jpg") %>
               <% else %>
               <%= image_tag('../assets/kidsBicycle.jpg', :class => "full-width-content") %> 
               <% end %>
@@ -133,25 +115,7 @@
       
     <% end %>      
       
-    </div><!-- end container -->    
       
     
-    <!-- All Javascript at the bottom of the page for faster page loading -->
-    
-    <!-- First try for the online version of jQuery-->
-    <script src="http://code.jquery.com/jquery.js"></script>
-    
-    <!-- If no online access, fallback to our hardcoded version of jQuery -->
-    <script>window.jQuery || document.write('<script src="includes/js/jquery-1.8.2.min.js"><\/script>')</script>
-    
-    <!-- Bootstrap JS -->
-    <script src="bootstrap/js/bootstrap.min.js"></script>
-    
-    <!-- Custom JS -->
-    <script src="includes/js/script.js"></script>
   
-  </body>
-
-
-
 

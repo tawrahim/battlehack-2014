@@ -27,8 +27,13 @@ GEM
       tzinfo (~> 0.3.37)
     arel (4.0.2)
     bcrypt (3.1.7)
+    bootstrap-datetimepicker (2.1.30)
     builder (3.1.4)
     chronic (0.10.2)
+    climate_control (0.0.3)
+      activesupport (>= 3.0)
+    cocaine (0.5.4)
+      climate_control (>= 0.0.3, < 1.0)
     coffee-rails (4.0.1)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0, < 5.0)
@@ -69,6 +74,11 @@ GEM
     multi_json (1.10.1)
     netrc (0.7.7)
     orm_adapter (0.5.0)
+    paperclip (4.2.0)
+      activemodel (>= 3.0.0)
+      activesupport (>= 3.0.0)
+      cocaine (~> 0.5.3)
+      mime-types
     paypal-sdk-core (0.3.0)
       multi_json (~> 1.0)
       xml-simple
@@ -160,11 +170,13 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bootstrap-datetimepicker
   coffee-rails (~> 4.0.0)
   debugger
   devise
   jbuilder (~> 1.2)
   jquery-rails
+  paperclip (~> 4.1)
   paypal-sdk-rest
   pg (= 0.15.1)
   rails (= 4.0.4)

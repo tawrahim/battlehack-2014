@@ -3,6 +3,8 @@ class Raffle < ActiveRecord::Base
 	require 'twilio-ruby'
 
 	has_many :bids
+	has_attached_file :picture, :styles => { :large => "600x600>", :thumb => "100x100>" }, :default_url => "/images/:style/missing.png"
+  	validates_attachment_content_type :picture, :content_type => /\Aimage\/.*\Z/
 
 	def self.check_dates()
 		current_date =  Date.today

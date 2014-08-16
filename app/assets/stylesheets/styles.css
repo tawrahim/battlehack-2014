@@ -1,4 +1,4 @@
-/*
+/*/*/*/*
 
 My Custom CSS
 =============
@@ -46,47 +46,7 @@ footer {
 /* --------------------------------------
    Global Styles
    -------------------------------------- */
-.top-row{
-	margin-top :100px;
-}
 
-.data-row {
-	margin-bottom: 15px;
-}
-
-.hidden {
-	visibility: hidden;
-	display: none;
-}
-
-.no-bullet-list {
-	list-style-type: none;
-}
-
-.img-portrait {
-	width: 100px; 
-	height: 100px;
-}
-
-.centered-content {				
-	text-align: center;
-}
-
-.justiftied-content {
-	text-align: justify;
-}
-
-.left-content {
-	text-align: left;	
-}
-
-.right-content {
-	text-align: right;
-}
-
-.bold-content {
-	font-weight: bold;
-}
 
 .img-60 {
 	width: 60px;
@@ -113,19 +73,6 @@ footer {
   height: 100px;
 }
 
-.nice_form {
-  width: 1000px;
-  /*height: 165px;*/
-  margin-left: 10%;
-  margin-right: 40%;
-  /*background: #f6f9fa url(/assets/bg.png) left -250px repeat;*/
-  background-size: 50%;
-  border-top: solid 1px rgba(23,45,53,0.08);
-  border-bottom: solid 1px rgba(23,45,53,0.08);
-  padding-top: 130px;
-  padding-bottom: 140px;
-  text-align: center;
-}
 .cool_label {
   width: 106px;
 }
@@ -144,3 +91,4 @@ footer {
 .cooler {
   display:inline-block;
 }
+*/*/*/

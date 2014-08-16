@@ -8,7 +8,7 @@
           <div>
             <div class="panel no-border centered-content raffle-item-interspace">      
               <%=
-                link_to image_tag(x.picture_url, :class => "raffle-item-thumbnail-img"), edit_raffle_path(:id => x.id) %>
+                link_to image_tag(x.picture.url, :class => "raffle-item-thumbnail-img"), edit_raffle_path(:id => x.id) %>
             </div><!-- end panel -->
             <h6 class="centered-content raffle-thumbnail-text">
               <%=  x.name %>
